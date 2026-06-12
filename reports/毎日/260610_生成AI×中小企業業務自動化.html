@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>260610 生成AI × 中小企業の業務自動化</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      max-width: 800px;
+      margin: 48px auto;
+      padding: 0 24px;
+      color: #1a1a1a;
+      line-height: 1.8;
+      background: #f9f9f7;
+    }
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+    }
+    header h1 {
+      font-size: 1.4rem;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    .tag {
+      display: inline-block;
+      background: #e8f4fd;
+      color: #1565c0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+      color: #1a1a2e;
+    }
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #333;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+    th {
+      background: #f4f4f4;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    ul, ol {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+    li { margin-bottom: 6px; }
+    blockquote {
+      background: #f0f4ff;
+      border-left: 4px solid #3b5bdb;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      padding: 14px 18px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .stat {
+      display: inline-block;
+      background: #fff3e0;
+      color: #e65100;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .checklist li {
+      list-style: none;
+      padding-left: 4px;
+    }
+    .checklist li::before {
+      content: "☐ ";
+      color: #888;
+    }
+    .sources a {
+      color: #1565c0;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .sources a:hover { text-decoration: underline; }
+    .sources li { margin-bottom: 4px; }
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+<a style="display:inline-block;margin:16px 0 0 24px;font-size:.85rem;color:#3b5bdb;text-decoration:none" href="../../portal.html">← ポータルに戻る</a>
+
+<header>
+  <p>新規事業リサーチレポート</p>
+  <h1>生成AI × 中小企業の業務自動化</h1>
+  <p>作成日：2026年6月10日</p>
+</header>
+
+<section>
+  <h2>① 競合・先行事例（国内プレイヤー）</h2>
+  <table>
+    <tr>
+      <th>企業名</th><th>概要</th><th>特徴</th>
+    </tr>
+    <tr>
+      <td><strong>PKSHA Technology</strong></td>
+      <td>自然言語処理・画像認識AIを企業向けに提供</td>
+      <td>コールセンター自動化・業務効率化に強み</td>
+    </tr>
+    <tr>
+      <td><strong>Ledge.ai</strong></td>
+      <td>生成AI・GPT活用の業務効率化SaaS</td>
+      <td>中小企業向けの価格設定と手厚いサポート</td>
+    </tr>
+    <tr>
+      <td><strong>freee</strong></td>
+      <td>会計・人事労務SaaSにAIを組み込み</td>
+      <td>SMB向けに最も普及しているAI業務ツールの一つ</td>
+    </tr>
+    <tr>
+      <td><strong>Asana（日本向け展開）</strong></td>
+      <td>プロジェクト管理にAI自動化機能を追加</td>
+      <td>タスク自動割り振り・進捗予測など</td>
+    </tr>
+  </table>
+
+  <h3>先行事例</h3>
+  <ul>
+    <li>青森県の自治体：会議の文字起こし・議事録作成にAI導入 → <span class="stat">作業時間40%削減</span></li>
+    <li>アパレル中小企業：閲覧履歴からAIがスタイル提案 → クリック率・購買率が大幅向上</li>
+    <li>2024〜2025年時点で「生成AIを定常的に業務で使っている」企業は <span class="stat">6〜7割</span> に到達</li>
+  </ul>
+</section>
+
+<section>
+  <h2>② 市場規模・トレンド</h2>
+
+  <h3>市場規模</h3>
+  <ul>
+    <li>AI SaaS市場（グローバル）：2025年 <span class="stat">1,317億ドル</span> → 2026年 <span class="stat">1,822億ドル</span>（CAGR <span class="stat">38.3%</span>）</li>
+    <li>2030年には <span class="stat">6,731億ドル</span> 規模へ拡大見込み</li>
+    <li>日本の生成AI市場成長率：<span class="stat">84.4%</span>（IDC Japan予測）— 世界平均を大きく上回る</li>
+  </ul>
+
+  <h3>今起きていること（2026年のトレンド）</h3>
+  <ol>
+    <li><strong>AIエージェント元年</strong> — 単発の質問応答から、複数タスクを自律的にこなす「エージェント」への移行</li>
+    <li><strong>マルチエージェントの本格普及</strong> — 複数のAIが連携して業務プロセスを丸ごと自動化</li>
+    <li><strong>業界特化型AI SaaSの台頭</strong> — 医療・建設・飲食など業種ごとの専門ツールが増加</li>
+    <li><strong>ローコード・ノーコードAI</strong> — エンジニア不要でAI業務フローを組める製品が普及中</li>
+  </ol>
+
+  <h3>中小企業への浸透要因</h3>
+  <ul>
+    <li>SaaS型（月額課金）で初期コストが低い</li>
+    <li>補助金（IT導入補助金など）の対象になるケースが多い</li>
+    <li>クラウドネイティブで導入ハードルが下がっている</li>
+  </ul>
+</section>
+
+<section>
+  <h2>③ 仮説：自分たちがやるとしたら何が差別化になるか</h2>
+  <blockquote>「業種特化 × 導入支援込み」のAI業務自動化パッケージ</blockquote>
+
+  <h3>背景</h3>
+  <ul>
+    <li>ツール自体はコモディティ化しつつある（ChatGPT、Copilotなど）</li>
+    <li>中小企業の課題は「使いこなせないこと」であり、ツール提供だけでは解決しない</li>
+    <li>業種ごとの業務フロー理解 ＋ 導入・定着支援がセットになってはじめて価値になる</li>
+  </ul>
+
+  <h3>差別化ポイント案</h3>
+  <ul>
+    <li><strong>特定業種（例：建設・小売・飲食）に絞って深く入る</strong></li>
+    <li>ツール提供ではなく「業務改善の結果」にコミットするアウトカム型の契約</li>
+    <li>現場スタッフが使えるUI／運用マニュアルを含むパッケージ販売</li>
+  </ul>
+</section>
+
+<section>
+  <h2>次のアクション候補</h2>
+  <ul class="checklist">
+    <li>特定業種（建設・小売・飲食など）でさらに深掘りする</li>
+    <li>既存プレイヤーの料金・機能を比較する</li>
+    <li>ターゲット企業規模（従業員何名規模か）を定義する</li>
+  </ul>
+</section>
+
+<section class="sources">
+  <h2>参考リンク</h2>
+  <ul>
+    <li><a href="https://note.com/sotapro/n/n9c70124881f2">生成AI搭載SaaS市場調査レポート 2025年版</a></li>
+    <li><a href="https://www.gii.co.jp/report/tbrc1970139-artificial-intelligence-software-service-saas.html">AI SaaS市場規模・予測（GII）</a></li>
+    <li><a href="https://jp.ext.hp.com/techdevice/ai/ai_explained_44/">2026年の生成AIトレンド完全ガイド</a></li>
+    <li><a href="https://www.aidma-hd.jp/ai/ai-start-up-company/">日本のAIスタートアップ2026年最新版</a></li>
+  </ul>
+</section>
+
+<footer>自動生成レポート — 新規事業リサーチ</footer>
+
+</body>
+</html>

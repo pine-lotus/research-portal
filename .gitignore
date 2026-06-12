@@ -1,0 +1,22 @@
+# macOSの自動生成ファイル
+.DS_Store
+
+# 一時ファイル・スクリプト
+*.tmp
+*.log
+convert_to_html.py
+
+# 別プロジェクト（リサーチ管理対象外）
+MYREC/
+lyrics-translator/
+youtube-summary/
+
+# 画像・PDFなど大きなファイル
+*.png
+*.pdf
+*.icns
+*.car
+*.svg
+
+# Claudeの設定（個人情報含む可能性）
+.claude/
