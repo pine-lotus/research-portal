@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業提案書｜戦略分析（試作）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== カラーパレット（ここだけ変えれば全体の色が変わります） ===== */
+    --accent:#6A51E6;   /* ベースカラー（紫） */
+    --accent-2:#B451E6; /* アクセント2（紫マゼンタ） */
+    --cyan:#24C1E0; --blue:#5183E6; --pink:#ED7EDA;
+    --bg:#F5F3FC;--card:#FCFBFF;--ink:#241C3D;--ink-soft:#6F6A85;--line:#E7E2F4;
+    --green:#24C1E0;    /* 強み・肯定系（シアン） */
+    --red:#ED7EDA;      /* 弱み・脅威系（ピンク） */
+    --navy:#2B2150;     /* フッターの濃色 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .page{max-width:1080px;margin:0 auto;padding:56px 56px 0;}
+  .serif{font-family:"Noto Serif JP",serif;}
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.08em;color:var(--ink-soft);font-weight:500;}
+  .topbar .dot{color:var(--accent);}
+  .topbar .right{letter-spacing:.18em;}
+  h1.hero{font-family:"Noto Serif JP",serif;font-weight:900;font-size:50px;line-height:1.25;margin:26px 0 18px;}
+  h1.hero .hl{background:linear-gradient(90deg,var(--accent),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lead{max-width:820px;color:var(--ink-soft);font-size:15px;}
+  .lead b{color:var(--ink);font-weight:700;}
+  .rule{height:5px;border-radius:3px;margin:28px 0 6px;background:linear-gradient(90deg,var(--accent),var(--pink) 50%,var(--cyan));}
+  .sec-head{display:flex;align-items:center;gap:12px;margin:38px 0 18px;}
+  .sec-no{color:var(--accent);font-weight:900;font-size:14px;letter-spacing:.1em;}
+  .sec-title{font-weight:700;font-size:18px;}
+  .sec-head .meta{font-size:11px;color:var(--ink-soft);letter-spacing:.08em;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
+
+  /* SWOT */
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .swot .card{border-top:3px solid var(--c);}
+  .swot .head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .badge{width:34px;height:34px;border-radius:9px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;}
+  .swot .head .t{font-weight:700;font-size:16px;}
+  .swot .head .e{font-size:11px;color:var(--ink-soft);}
+  .swot ul{list-style:none;}
+  .swot li{font-size:13px;color:var(--ink);margin:9px 0;padding-left:16px;position:relative;}
+  .swot li::before{content:"●";color:var(--c);font-size:7px;position:absolute;left:0;top:5px;}
+
+  /* TOWS */
+  .tows{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .tows .card{border-left:3px solid var(--c);}
+  .tows .k{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--c);}
+  .tows .k .lbl{color:var(--ink-soft);margin-left:8px;}
+  .tows h4{font-size:15px;margin:6px 0 7px;font-weight:700;}
+  .tows p{font-size:12.5px;color:var(--ink-soft);}
+
+  /* 5 forces */
+  .forces{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:center;}
+  .force{border:1px solid var(--line);border-radius:11px;padding:16px;background:var(--card);}
+  .force.center{background:var(--navy);color:#fff;border:none;}
+  .force .tag{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--accent);}
+  .force.center .tag{color:var(--accent-2);}
+  .force h4{font-size:14px;margin:5px 0 6px;font-weight:700;}
+  .force p{font-size:11.5px;color:var(--ink-soft);}
+  .force.center p{color:#c7cdd8;}
+  .force.center h4{font-size:15px;}
+
+  /* 3C */
+  .threeC .card{border-top:3px solid var(--c);margin-bottom:18px;}
+  .threeC .lab{font-weight:700;font-size:15px;}
+  .threeC .lab small{color:var(--ink-soft);font-weight:500;margin-left:8px;font-size:11px;}
+  .threeC p{font-size:12.5px;color:var(--ink-soft);margin-top:8px;}
+
+  .two-col{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;}
+
+  /* VRIO table */
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px;}
+  th{text-align:left;font-size:11px;color:var(--ink-soft);font-weight:700;letter-spacing:.05em;padding:10px 12px;border-bottom:2px solid var(--line);}
+  td{padding:13px 12px;border-bottom:1px solid var(--line);}
+  td.mark{text-align:center;color:var(--green);font-size:15px;}
+  td.res{font-weight:700;}
+  td.verdict{font-weight:700;font-size:12px;}
+  .v-perm{color:var(--accent);}
+  .v-temp{color:var(--accent-2);}
+  .v-par{color:var(--ink-soft);}
+
+  /* footer */
+  .footer{background:var(--navy);color:#E9E5DC;margin-top:46px;border-radius:16px 16px 0 0;padding:36px 48px 44px;}
+  .footer h3{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:700;color:#fff;}
+  .f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;margin-top:24px;}
+  .f3 .h{color:var(--accent-2);font-weight:700;font-size:13px;margin-bottom:8px;}
+  .f3 p{font-size:12.5px;color:#c7cdd8;}
+  .source{font-size:11px;color:#7d8593;margin-top:26px;line-height:1.6;}
+  .closing{text-align:right;color:#9AA1AE;font-size:13px;margin-top:14px;}
+  @media print{body{background:#fff}.page{padding:20px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div><span class="dot">●</span>&nbsp; AI導入サポート事業 ／ 戦略分析</div>
+    <div class="right">P.02 ・ STRATEGIC ANALYSIS</div>
+  </div>
+  <h1 class="hero">戦略の確からしさを、<span class="hl">5つのレンズ</span>で検証する。</h1>
+  <p class="lead">「地方中小 × 低リテラシーの白地を、チャネルと育成で独占する」── この仮説を、SWOT・クロスSWOT・ファイブフォース・3C・VRIO で多角的に点検する。</p>
+  <div class="rule"></div>
+
+  <!-- 01 SWOT -->
+  <div class="sec-head"><span class="sec-no">01</span><span class="sec-title">SWOT 分析</span><span class="meta">内部 ／ 外部</span></div>
+  <div class="swot">
+    <div class="card" style="--c:var(--green)">
+      <div class="head"><div class="badge">S</div><div><div class="t">強み</div><div class="e">Strengths ／ 内部・追い風</div></div></div>
+      <ul>
+        <li>4名の専門知見（セキュリティ・CHRO・組織・AI実装・BD）</li>
+        <li>士業・商工会議所・M&A仲介という独自の営業チャネル</li>
+        <li>補助金申請まで一気通貫で初期負担を解消</li>
+        <li>高収益ストック型（顧問・研修）中心の利益率30%超</li>
+        <li>セキュアAI・規制業種対応の技術的厚み</li>
+      </ul>
+    </div>
+    <div class="card" style="--c:var(--red)">
+      <div class="head"><div class="badge">W</div><div><div class="t">弱み</div><div class="e">Weaknesses ／ 内部・課題</div></div></div>
+      <ul>
+        <li>知名度・実績ゼロからのスタート</li>
+        <li>立ち上げ期の低稼働・ベンチコスト（利益率の生命線）</li>
+        <li>少人数の属人キャパに上限・採用リスク</li>
+        <li>受託開発は労働集約で全体利益率を押し下げ</li>
+        <li>地方密着＝移動・対面のコストが高い</li>
+      </ul>
+    </div>
+    <div class="card" style="--c:var(--accent-2)">
+      <div class="head"><div class="badge">O</div><div><div class="t">機会</div><div class="e">Opportunities ／ 外部・追い風</div></div></div>
+      <ul>
+        <li>10〜100人の白地＝約40万社・TAM約6,000億円</li>
+        <li>規模が小さいほど活用率が低く競合が手薄（独占の余地）</li>
+        <li>補助金政策の追い風（導入450万・育成75%）</li>
+        <li>生成AIの低価格化・ノーコード化で導入ハードル低下</li>
+        <li>後継者不在・人手不足＝省人化とM&Aの増加</li>
+      </ul>
+    </div>
+    <div class="card" style="--c:var(--blue)">
+      <div class="head"><div class="badge">T</div><div><div class="t">脅威</div><div class="e">Threats ／ 外部・逆風</div></div></div>
+      <ul>
+        <li>デジライズ等が地方中小×研修で先行（560社超）</li>
+        <li>資金力のある大手・コンサルの中小への下方シフト</li>
+        <li>クラウドベンダー直販によるAIのコモディティ化</li>
+        <li>技術進化が速く提供価値が陳腐化しやすい</li>
+        <li>地方の予算配分・補助金制度の変更リスク</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 02 TOWS -->
+  <div class="sec-head"><span class="sec-no">02</span><span class="sec-title">クロスSWOT（TOWS）</span><span class="meta">分析 → 戦略</span></div>
+  <div class="tows">
+    <div class="card" style="--c:var(--green)"><div class="k">S × O <span class="lbl">／ 積極化</span></div>
+      <h4>チャネル × 補助金で白地を面展開</h4><p>独自チャネル網と補助金伴走を武器に、低負担パッケージを40万社へ。最速で地域ドミナントを取りにいく主戦略。</p></div>
+    <div class="card" style="--c:var(--accent)"><div class="k">S × T <span class="lbl">／ 差別化</span></div>
+      <h4>伴走の深さ＋セキュアAIで先行に対抗</h4><p>デジライズ等が先行する中、導入→活用→定着の伴走と規制業種対応で先行への乗り換え／後発の差別化を作る。</p></div>
+    <div class="card" style="--c:var(--accent-2)"><div class="k">W × O <span class="lbl">／ 段階化</span></div>
+      <h4>研修をプロダクト化し低稼働を解消</h4><p>研修を商品化＝自社人材の量産装置に転用。実績は補助金事例で素早く積み、知名度ゼロを短期で埋める。</p></div>
+    <div class="card" style="--c:var(--red)"><div class="k">W × T <span class="lbl">／ 防衛</span></div>
+      <h4>1地域・1業種に集中し先行者利益を固める</h4><p>薄い知名度で広く戦って負ける前に、コモディティ化が進む前に、チャネルと地域を絞って先に押さえる。模倣困難性を確保する。</p></div>
+  </div>
+
+  <!-- 03 / 04 -->
+  <div class="two-col">
+    <div>
+      <div class="sec-head"><span class="sec-no">03</span><span class="sec-title">ファイブフォース</span><span class="meta">業界構造</span></div>
+      <div class="forces">
+        <div></div>
+        <div class="force"><div class="tag">新規参入の脅威</div><h4>中〜高</h4><p>参入障壁が低くツールも安価。→ チャネル網・地域×補助金ノウハウで先行優位を確保</p></div>
+        <div></div>
+        <div class="force"><div class="tag">買い手</div><h4>中〜高</h4><p>中小は1社・少額で交渉力が弱い。→“狙う白地”までの伴走で乗り換えコストとLTVが効く</p></div>
+        <div class="force center"><div class="tag">既存競合の対抗</div><h4>中</h4><p>地方中小は競合手薄。デジライズが先行。差別化・導入データを蓄積</p></div>
+        <div class="force"><div class="tag">売り手（AI基盤）</div><h4>中</h4><p>クラウド大手に依存。→ マルチベンダー＋自社メソッドで依存度を低減</p></div>
+        <div></div>
+        <div class="force"><div class="tag">代替品の脅威</div><h4>中〜高</h4><p>クラウドAIの自己導入・ノーコード。→ 自己導入で挫折する層に“定着”支援で価値を出す</p></div>
+        <div></div>
+      </div>
+      <p class="lead" style="margin-top:14px;font-size:12.5px">最大の脅威は<b>参入障壁の低さ</b>。だから“面・育成”の堀（チャネル／地域）が模倣の壁になる。</p>
+    </div>
+    <div class="threeC">
+      <div class="sec-head"><span class="sec-no">04</span><span class="sec-title">3C 分析</span><span class="meta">市場構造</span></div>
+      <div class="card" style="--c:var(--green)"><div class="lab">Customer <small>顧客</small></div>
+        <p>10〜100人の地方中小・約40万社。低リテラシーで「導入不明・人材不足」が課題。価格より安心を求める。</p></div>
+      <div class="card" style="--c:var(--red)"><div class="lab">Competitor <small>競合</small></div>
+        <p>上位は高リテラシー×大企業に密集。地方中小ではデジライズ等が先行も、面では空白。</p></div>
+      <div class="card" style="--c:var(--accent-2)"><div class="lab">Company <small>自社</small></div>
+        <p>専門知見＋チャネル＋補助金＋セキュア。高利益・高循環のストック型を狙える。</p></div>
+    </div>
+  </div>
+
+  <!-- 05 VRIO -->
+  <div class="sec-head"><span class="sec-no">05</span><span class="sec-title">VRIO ／「独占の堀」の持続性</span><span class="meta">競争優位の源泉</span></div>
+  <div class="card">
+    <table>
+      <thead><tr><th>経営資源</th><th>V 価値</th><th>R 希少性</th><th>I 模倣困難</th><th>O 組織</th><th>判定</th></tr></thead>
+      <tbody>
+        <tr><td class="res">地域ドミナント（先行で面を取る）</td><td class="mark">○</td><td class="mark">○</td><td class="mark">○</td><td class="mark">○</td><td class="verdict v-perm">持続的優位（唯一の本命）</td></tr>
+        <tr><td class="res">営業チャネル網（士業・商工・M&A）</td><td class="mark">○</td><td class="mark">○</td><td class="mark">○</td><td class="mark">△</td><td class="verdict v-temp">一時的優位</td></tr>
+        <tr><td class="res">育成→人材量産エンジン</td><td class="mark">○</td><td class="mark">○</td><td class="mark">△</td><td class="mark">△</td><td class="verdict v-temp">一時的優位</td></tr>
+        <tr><td class="res">セキュアAI・規制業種対応</td><td class="mark">○</td><td class="mark">△</td><td class="mark">△</td><td class="mark">○</td><td class="verdict v-par">競争均衡〜一時的</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:14px;font-size:12px">著しく持続する優位は「地域ドミナント」一本。チャネル網・育成・セキュアは模倣や均衡に近づくので、早期に特定地域を面で固めることが、唯一の構造的な堀になる。</p>
+  </div>
+</div>
+
+<div class="page" style="padding-top:0">
+  <div class="footer">
+    <h3>分析の結論 ── 仮説は成立。ただし堀づくりが生命線。</h3>
+    <div class="f3">
+      <div><div class="h">機会は本物</div><p>40万社・6,000億円の白地は構造的。補助金とAI低価格化が追い風。需要側の確からしさは高い。</p></div>
+      <div><div class="h">勝負は"非技術の堀"</div><p>参入障壁が低い以上、技術では守れない。チャネル × 地域 × 育成を先に握れるかが分かれ目。</p></div>
+      <div><div class="h">最大の脅威は時間</div><p>デジライズ等の先行とコモディティ化。狭く深く・速くで先行者利益を取りにいく。</p></div>
+    </div>
+    <div class="source">分析は本事業案（ターゲット＝従業員10〜100人・約40万社／TAM約6,000億円／営業利益率30%超・派遣を含む循環）に基づく。市場・競合データは P.01 と共通。各社状況は各社公開情報に基づく定性配置。</div>
+    <div class="closing">人に優しいAI化を。</div>
+  </div>
+</div>
+</body>
+</html>

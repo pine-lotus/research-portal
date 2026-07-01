@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>260629 観光テック（インバウンドDX）</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; background: #f9f9f7; }
+    header { background: #1a1a2e; color: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 36px; }
+    header h1 { font-size: 1.4rem; margin: 0 0 8px; font-weight: 700; }
+    header p { margin: 0; font-size: 0.9rem; opacity: 0.7; }
+    section { background: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    h2 { font-size: 1.1rem; font-weight: 700; margin-top: 0; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; color: #1a1a2e; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: #333; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 12px; }
+    th { background: #f4f4f4; text-align: left; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e0e0e0; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    ul, ol { padding-left: 20px; margin: 8px 0; }
+    li { margin-bottom: 6px; }
+    blockquote { background: #f0f4ff; border-left: 4px solid #3b5bdb; border-radius: 0 8px 8px 0; margin: 16px 0; padding: 14px 18px; font-weight: 700; color: #1a1a2e; }
+    .stat { display: inline-block; background: #fff3e0; color: #e65100; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
+    .checklist li { list-style: none; padding-left: 4px; }
+    .checklist li::before { content: "☐ "; color: #888; }
+    .sources a { color: #1565c0; text-decoration: none; font-size: 0.88rem; }
+    .sources li { margin-bottom: 4px; }
+    footer { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 32px; }
+  </style>
+</head>
+<body>
+<a style="display:inline-block;margin:16px 0 0 24px;font-size:.85rem;color:#3b5bdb;text-decoration:none" href="../../portal.html">← ポータルに戻る</a>
+<header>
+  <p>新規事業リサーチレポート</p>
+  <h1>観光テック（インバウンドDX）</h1>
+  <p>作成日：2026-06-29</p>
+</header>
+
+<!-- ① 競合・先行事例 -->
+<section>
+  <h2>① 競合・先行事例</h2>
+  <p style="font-size:0.85rem;color:#888;margin-top:0">※ 各社の公式サイトをWebFetchで一次確認済み</p>
+  <table>
+    <tr>
+      <th>企業名</th>
+      <th>公式URL</th>
+      <th>解いている課題</th>
+      <th>収益化の方法</th>
+      <th>特徴・差別化</th>
+    </tr>
+    <tr>
+      <td><strong>NutmegLabs Japan</strong></td>
+      <td><a href="https://nutmeglabs.jp/" target="_blank">nutmeglabs.jp</a></td>
+      <td>観光・体験事業者の予約・チケット・CRMが分散し運営が非効率</td>
+      <td>B2B SaaS 月額課金（タビナカ事業者向け）</td>
+      <td>予約→チケット→顧客管理→デジタルマップを一気通貫で提供。累計5億円超調達。米国・ハワイにも展開中</td>
+    </tr>
+    <tr>
+      <td><strong>AVA Intelligence</strong></td>
+      <td><a href="https://www.ava-intel.com/" target="_blank">ava-intel.com</a></td>
+      <td>旅行計画の手間・情報過多。地方観光地のコンテンツ到達率の低さ</td>
+      <td>B2C（アプリ）＋B2B2C（観光地・宿泊施設へのAIエンジン提供）</td>
+      <td>生成AI×独自旅行データで約30秒でプラン自動生成。LINE連携でライトユーザーにもリーチ。累計1.3億円調達</td>
+    </tr>
+    <tr>
+      <td><strong>WAmazing</strong></td>
+      <td><a href="https://corp.wamazing.com/" target="_blank">corp.wamazing.com</a></td>
+      <td>中華圏インバウンド旅行者の地方分散・手配の複雑さ</td>
+      <td>OTA手数料＋自治体向けDX支援・マーケティング受託</td>
+      <td>台湾・香港・中国特化OTA×地域観光DX受託の二輪構造。2025年にChangeホールディングスと合弁を設立し地方創生へ本格参入</td>
+    </tr>
+    <tr>
+      <td><strong>tripla</strong></td>
+      <td><a href="https://tripla.io/" target="_blank">tripla.io</a></td>
+      <td>ホテル・旅館が大手OTA依存で自社直販チャネルを持てない</td>
+      <td>SaaS型（予約エンジン・AIチャットボット・CRM の月額課金）</td>
+      <td>直販予約率向上×5言語対応インバウンドチャットボット。AIが95%の質問に自動回答。大手ホテルチェーンも多数導入</td>
+    </tr>
+  </table>
+  <h3>先行事例（注目トピック）</h3>
+  <ul>
+    <li>じゃらんリサーチセンターが熱海市で生成AI多言語マーケティングの実証実験を実施（2025年2月）</li>
+    <li>長崎県公式観光サイトにAVA Intelligenceの「AI旅プラン」を導入（2025年3月）</li>
+    <li>観光庁が「令和8年度 全国の観光地・観光産業における観光DX推進事業」を推進中（NTTドコモビジネスが伴走支援）</li>
+    <li>若狭地域で地域独自OTA「Wakasa Stay」を観光協会主体で構築・運用開始（2025年秋）</li>
+  </ul>
+</section>
+
+<!-- ② 市場規模・トレンド -->
+<section>
+  <h2>② 市場規模・トレンド</h2>
+  <h3>市場規模</h3>
+  <ul>
+    <li>2025年訪日外客数：<span class="stat">4,270万人</span>（史上初の4,000万人突破・過去最高）</li>
+    <li>2025年インバウンド消費額：<span class="stat">9.5兆円</span>（前年比約17%増・過去最高更新）</li>
+    <li>経済波及効果：<span class="stat">約19兆円</span>（2025年実績）</li>
+    <li>政府目標：2030年 訪日<span class="stat">6,000万人</span>・消費額<span class="stat">15兆円</span></li>
+    <li>宿泊業の正社員不足率：<span class="stat">72.6%</span>（全産業最高）、求人倍率：2.53倍</li>
+    <li>日本のDX市場全体：2026年に<span class="stat">500億ドル超</span>が見込まれる</li>
+  </ul>
+  <h3>トレンド</h3>
+  <ol>
+    <li><strong>AIによる多言語対応の標準化</strong>：24時間対応の多言語チャットボット・AIコンシェルジュが急拡大。人手不足の宿泊業に必須化しつつある</li>
+    <li><strong>地方分散の加速</strong>：東京・京都・大阪のオーバーツーリズム対策として政府・自治体が地方観光地への誘導を推進。地方DXへの補助金が拡充</li>
+    <li><strong>体験型消費へのシフト</strong>：消費構造が「買い物」→「宿泊・体験・飲食」へ明確に移行。1人あたり旅行支出は22.9万円まで上昇</li>
+    <li><strong>直販チャネル強化</strong>：OTA手数料削減を狙う宿泊施設が「自社サイト予約エンジン×AI」を積極導入する動きが加速</li>
+    <li><strong>OpenAI・Googleの旅行参入</strong>：OpenAIが旅行予約ツールを発表、Googleもレストラン・チケット予約を強化。大手プラットフォームの参入により業界再編が加速</li>
+  </ol>
+</section>
+
+<!-- ③ 仮説 -->
+<section>
+  <h2>③ 仮説：差別化ポイント</h2>
+  <blockquote>地方の中小観光事業者（体験・宿泊）が「AI多言語コンシェルジュ＋直販予約＋インバウンドデータ分析」をワンストップで持てるようにすることが、最大の参入余地になる。</blockquote>
+  <h3>背景・根拠</h3>
+  <ul>
+    <li>大手OTA（Booking.com・じゃらん等）への手数料依存が中小観光・宿泊事業者の収益を圧迫している</li>
+    <li>tripla・Nutmegは都市部・大規模施設が中心。地方の20〜50室規模の旅館・民泊・体験事業者向けは未開拓ゾーン</li>
+    <li>2025年の訪日消費9.5兆円のうち体験・飲食・宿泊が約7割を占め、地方分散も政策的に推進されている</li>
+    <li>宿泊業の正社員不足率72.6%という人手不足が「AIによる24時間多言語対応」へのニーズを強制的に押し上げている</li>
+    <li>観光庁補助金がDX導入コストのバリアを下げており、初期導入のハードルが例年より低い今が参入タイミング</li>
+  </ul>
+</section>
+
+<!-- 次のアクション -->
+<section>
+  <h2>次のアクション候補</h2>
+  <ul class="checklist">
+    <li>地方旅館（50室以下）・体験事業者へのヒアリング（OTA手数料の実態・AI導入意向）</li>
+    <li>観光庁「令和8年度 観光DX推進事業」の補助金スキームを確認し、販売チャネルへの組み込みを検討</li>
+    <li>Nutmeg・triplaが未対応の「体験特化×地方」ニッチの具体的な事業者数・市場規模を試算</li>
+    <li>インバウンド向け多言語AIチャットボットのPoC費用・技術スタック調査</li>
+    <li>WAmazingの地方観光DX受託モデルの単価・受注件数などの収益構造を詳細調査</li>
+  </ul>
+</section>
+
+<!-- 参考リンク -->
+<section class="sources">
+  <h2>参考リンク</h2>
+  <ul>
+    <li><a href="https://honichi.com/news/2026/01/23/chokankaiken/" target="_blank">2025年訪日客数・消費額が過去最高、経済効果は約19兆円（訪日ラボ）</a></li>
+    <li><a href="https://yamatogokoro.jp/inbound_data/59160/" target="_blank">2025年インバウンド消費額9.5兆円で過去最高（やまとごころ.jp）</a></li>
+    <li><a href="https://inbound-tourism.businesshub.trueone.co.jp/blog/20251019-01.html" target="_blank">2026年インバウンド観光業界の動向予測（インバウンド観光ビジネス研究所）</a></li>
+    <li><a href="https://kepple.co.jp/articles/65iv_5w9a" target="_blank">インバウンド・観光関連ビジネスを展開するスタートアップ5選（kepple）</a></li>
+    <li><a href="https://www.travelvoice.jp/20230525-153492" target="_blank">観光DXを支援するNutmeg、総額4億円の資金調達（TravelVoice）</a></li>
+    <li><a href="https://prtimes.jp/main/html/rd/p/000000027.000047676.html" target="_blank">AVA Intelligence、1.3億円超の資金調達を実施（PR TIMES）</a></li>
+    <li><a href="https://www.newsweekjapan.jp/press-release/2025/08/wamazing202581.php" target="_blank">WAmazingとチェンジHDが合弁設立（Newsweek Japan）</a></li>
+    <li><a href="https://tripla.io/" target="_blank">tripla 公式サイト</a></li>
+    <li><a href="https://prtimes.jp/main/html/rd/p/000000007.000160768.html" target="_blank">観光庁・令和8年度 観光DX推進事業 説明会（PR TIMES）</a></li>
+  </ul>
+</section>
+<footer>自動生成レポート — 新規事業リサーチ</footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>事業提案書｜ビジネスモデル（試作）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ===== カラーパレット（ここだけ変えれば全体の色が変わります） ===== */
+    --accent:#6A51E6;   /* ベースカラー（紫） */
+    --accent-2:#B451E6; /* アクセント2（紫マゼンタ） */
+    --cyan:#24C1E0; --blue:#5183E6; --pink:#ED7EDA;
+    --bg:#F5F3FC;--card:#FCFBFF;--ink:#241C3D;--ink-soft:#6F6A85;--line:#E7E2F4;
+    --green:#24C1E0;    /* 肯定・強み系（シアン） */
+    --navy:#2B2150;     /* フッターの濃色 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .page{max-width:1080px;margin:0 auto;padding:56px 56px 0;}
+  .serif{font-family:"Noto Serif JP",serif;}
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.08em;color:var(--ink-soft);font-weight:500;}
+  .topbar .dot{color:var(--accent);}
+  .topbar .right{letter-spacing:.18em;}
+  h1.hero{font-family:"Noto Serif JP",serif;font-weight:900;font-size:50px;line-height:1.25;margin:26px 0 18px;}
+  h1.hero .hl{background:linear-gradient(90deg,var(--accent),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lead{max-width:820px;color:var(--ink-soft);font-size:15px;}
+  .lead b{color:var(--ink);font-weight:700;}
+  .rule{height:5px;border-radius:3px;margin:28px 0 6px;background:linear-gradient(90deg,var(--accent),var(--pink) 50%,var(--cyan));}
+  .sec-head{display:flex;align-items:center;gap:12px;margin:40px 0 18px;}
+  .sec-no{color:var(--accent);font-weight:900;font-size:14px;letter-spacing:.1em;}
+  .sec-title{font-weight:700;font-size:18px;}
+  .sec-head .meta{font-size:11px;color:var(--ink-soft);letter-spacing:.08em;}
+
+  /* BMC */
+  .bmc{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:auto auto;gap:14px;}
+  .blk{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px;}
+  .blk .h{font-size:12px;font-weight:700;}
+  .blk .en{font-size:9px;color:var(--ink-soft);letter-spacing:.08em;display:block;margin-bottom:10px;}
+  .blk ul{list-style:none;}
+  .blk li{font-size:11.5px;color:var(--ink-soft);margin:6px 0;padding-left:12px;position:relative;}
+  .blk li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+  .blk.vp{border:1px solid var(--accent);background:#FBF3E9;}
+  .blk.vp .h{color:var(--accent);}
+  /* spans */
+  .r2{grid-row:span 2;}
+  .cost-rev{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+
+  /* value chain */
+  .vc-main{display:flex;align-items:stretch;gap:8px;}
+  .vc-step{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 12px;text-align:center;position:relative;}
+  .vc-step.hot{border:2px solid var(--accent);background:#FBF3E9;}
+  .vc-step .t{font-weight:700;font-size:13px;}
+  .vc-step .s{font-size:10.5px;color:var(--ink-soft);margin-top:5px;}
+  .vc-arrow{display:flex;align-items:center;color:var(--accent);font-weight:700;}
+  .vc-note{text-align:center;font-size:12.5px;color:var(--ink-soft);margin:14px 0;}
+  .vc-note b{color:var(--accent);}
+  .vc-support{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px;}
+  .vc-support .s{background:#EFE9DD;border-radius:8px;padding:10px;font-size:11.5px;text-align:center;color:var(--ink-soft);}
+  .vc-support .s b{color:var(--ink);}
+
+  .footer{background:var(--navy);color:#E9E5DC;margin-top:46px;border-radius:16px 16px 0 0;padding:36px 48px 44px;}
+  .footer h3{font-family:"Noto Serif JP",serif;font-size:22px;font-weight:700;color:#fff;}
+  .f3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;margin-top:24px;}
+  .f3 .h{color:var(--accent-2);font-weight:700;font-size:13px;margin-bottom:8px;}
+  .f3 p{font-size:12.5px;color:#c7cdd8;}
+  .source{font-size:11px;color:#7d8593;margin-top:26px;line-height:1.6;}
+  .closing{text-align:right;color:#9AA1AE;font-size:13px;margin-top:14px;}
+  @media print{body{background:#fff}.page{padding:20px}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topbar">
+    <div><span class="dot">●</span>&nbsp; AI導入サポート事業 ／ ビジネスモデル</div>
+    <div class="right">P.03 ・ BUSINESS MODEL</div>
+  </div>
+  <h1 class="hero">稼ぐ仕組みを、<span class="hl">一枚の設計図</span>に。</h1>
+  <p class="lead">誰に・何を・どう届けて・どこで儲けるか。事業をビジネスモデルキャンバスとバリューチェーンに落とし、利益の源泉と構造を可視化する。</p>
+  <div class="rule"></div>
+
+  <!-- 06 BMC -->
+  <div class="sec-head"><span class="sec-no">06</span><span class="sec-title">ビジネスモデルキャンバス</span><span class="meta">BUSINESS MODEL CANVAS</span></div>
+  <div class="bmc">
+    <div class="blk r2"><span class="h">キーパートナー</span><span class="en">KEY PARTNERS</span>
+      <ul><li>地方士業・商工会議所</li><li>M&A仲介</li><li>AI基盤ベンダー（マルチ）</li><li>補助金支援・行政</li></ul></div>
+    <div class="blk"><span class="h">主要活動</span><span class="en">KEY ACTIVITIES</span>
+      <ul><li>導入支援・BPR</li><li>研修プロダクト開発</li><li>受託開発・チャネル開拓</li></ul></div>
+    <div class="blk vp r2"><span class="h">価値提案</span><span class="en">VALUE PROPOSITIONS</span>
+      <ul><li>「誰一人取り残さない」人に優しいAI化</li><li>低リテラシーでも“使える状態”まで伴走</li><li>補助金で初期負担ゼロ</li><li>セキュアで規制業種も安心</li></ul></div>
+    <div class="blk"><span class="h">顧客との関係</span><span class="en">RELATIONSHIPS</span>
+      <ul><li>長期伴走・顧問（高継続）</li><li>地域コミュニティ・口コミ</li><li>定着支援で離脱防止</li></ul></div>
+    <div class="blk r2"><span class="h">顧客セグメント</span><span class="en">CUSTOMER SEGMENTS</span>
+      <ul><li>従業員10〜100人の地方中小</li><li>約40万社・低リテラシー層</li><li>規制業種（セキュア需要）</li></ul></div>
+    <div class="blk"><span class="h">リソース</span><span class="en">KEY RESOURCES</span>
+      <ul><li>4名の専門人材／独自チャネル網</li><li>研修コンテンツ・導入メソッド</li><li>セキュア技術・導入実績</li></ul></div>
+    <div class="blk"><span class="h">チャネル</span><span class="en">CHANNELS</span>
+      <ul><li>士業・商工・M&Aの紹介</li><li>セミナー・研修</li><li>地域ドミナント</li></ul></div>
+  </div>
+  <div class="cost-rev">
+    <div class="blk"><span class="h">コスト構造</span><span class="en">COST STRUCTURE</span>
+      <ul><li>人件費（デリバリー中心・最大）</li><li>研修コンテンツ初期制作</li><li>営業・移動コスト</li><li>バックオフィス（補助金・労務）</li></ul></div>
+    <div class="blk"><span class="h">収益の流れ</span><span class="en">REVENUE STREAMS</span>
+      <ul><li>月額顧問・研修（ストック＝利益の柱）</li><li>導入・BPRフィー</li><li>受託開発</li><li>※補助金前提の価格設計</li></ul></div>
+  </div>
+
+  <!-- 07 Value Chain -->
+  <div class="sec-head"><span class="sec-no">07</span><span class="sec-title">バリューチェーン</span><span class="meta">どこで価値と利益が生まれるか</span></div>
+  <div class="vc-main">
+    <div class="vc-step"><div class="t">集客</div><div class="s">チャネル紹介・補助金入口</div></div>
+    <div class="vc-arrow">▶</div>
+    <div class="vc-step"><div class="t">導入</div><div class="s">BPR・初期セットアップ</div></div>
+    <div class="vc-arrow">▶</div>
+    <div class="vc-step hot"><div class="t">活用支援</div><div class="s">コンサル・研修（高粗利）</div></div>
+    <div class="vc-arrow">▶</div>
+    <div class="vc-step hot"><div class="t">定着</div><div class="s">伴走・顧問（ストック）</div></div>
+    <div class="vc-arrow">▶</div>
+    <div class="vc-step"><div class="t">拡張</div><div class="s">紹介・横展開・受託</div></div>
+  </div>
+  <div class="vc-note">粗利は「<b>活用支援・定着</b>」に集中 ── ここをストック化できるかが利益率と企業価値を決める</div>
+  <div class="vc-support">
+    <div class="s"><b>支援活動：</b>人材育成・採用</div>
+    <div class="s">技術（セキュアAI）</div>
+    <div class="s">チャネル・アライアンス</div>
+    <div class="s">コーポレート（補助金・労務）</div>
+  </div>
+</div>
+
+<div class="page" style="padding-top:0">
+  <div class="footer">
+    <h3>稼ぐ構造の要点 ── 入口は補助金、利益はストック。</h3>
+    <div class="f3">
+      <div><div class="h">ストック柱</div><p>月額顧問・研修の継続収益が利益率と評価倍率を決める。フロー（導入・受託）は入口で単価源にする。</p></div>
+      <div><div class="h">補助金が入口</div><p>初期負担を消すことで低リテラシー層の意思決定を動かし、申請ノウハウ自体が参入障壁になる。</p></div>
+      <div><div class="h">粗利は中流に集中</div><p>集客・導入で獲り、活用支援・定着で稼ぐ。育成・技術・チャネルが全工程を下支えする。</p></div>
+    </div>
+    <div class="source">本ビジネスモデルは本事業案（ターゲット＝従業員10〜100人・約40万社／TAM約6,000億円／営業利益率30%超・派遣を含む循環）に基づく。市場・競合データは P.01／P.02 と共通。</div>
+    <div class="closing">人に優しいAI化を。</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャラサンプル（3Dアニメ風）</title>
+<style>
+  html,body{margin:0;background:#20222e;color:#fff;
+    font-family:"Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;}
+  h1{font-size:22px;text-align:center;padding:16px 0 0;}
+  p.note{text-align:center;color:#aab;font-size:13px;margin:6px 0 14px;}
+  .grid{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;padding:0 16px 40px;}
+  .card{background:#2c2f40;border-radius:16px;padding:10px 10px 14px;
+    box-shadow:0 6px 18px rgba(0,0,0,.35);}
+  .card canvas{display:block;border-radius:12px;
+    background:radial-gradient(circle at 50% 35%, #cfe9ff 0%, #9cc6ee 70%, #7fb0e0 100%);}
+  .card .label{text-align:center;margin-top:8px;font-weight:bold;font-size:15px;}
+  .card .pt{text-align:center;color:#ffd23f;font-size:12px;}
+</style>
+</head>
+<body>
+<h1>🥚 キャラサンプル（3Dアニメ風）</h1>
+<p class="note">グラデーション・ハイライト・影で立体感を出した作画サンプルです。ふわっと上下に動きます。</p>
+<div class="grid" id="grid"></div>
+
+<script>
+"use strict";
+
+// 立体的な球体（顔・体のパーツ用）。光は左上から当たる想定
+function sphere(ctx, x, y, r, base, light, dark){
+  const g = ctx.createRadialGradient(x-r*0.35, y-r*0.4, r*0.1, x, y, r*1.1);
+  g.addColorStop(0, light);
+  g.addColorStop(0.55, base);
+  g.addColorStop(1, dark);
+  ctx.fillStyle = g;
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+  // ハイライト（つやの光点）
+  ctx.fillStyle = "rgba(255,255,255,.55)";
+  ctx.beginPath(); ctx.ellipse(x-r*0.38, y-r*0.42, r*0.22, r*0.14, -0.6, 0, Math.PI*2); ctx.fill();
+}
+
+// 立体的なカプセル（腕・脚・胴体用）
+function capsule(ctx, x, y, w, h, base, light, dark){
+  const g = ctx.createLinearGradient(x-w/2, 0, x+w/2, 0);
+  g.addColorStop(0, dark); g.addColorStop(0.4, base);
+  g.addColorStop(0.6, light); g.addColorStop(1, dark);
+  ctx.fillStyle = g;
+  const r = w/2;
+  ctx.beginPath();
+  ctx.moveTo(x-r, y); ctx.lineTo(x-r, y+h-r);
+  ctx.arc(x, y+h-r, r, Math.PI, 0, true);
+  ctx.lineTo(x+r, y); ctx.arc(x, y, r, 0, Math.PI, true);
+  ctx.fill();
+}
+
+// 楕円の床影
+function groundShadow(ctx, x, y, w){
+  const g = ctx.createRadialGradient(x, y, 1, x, y, w);
+  g.addColorStop(0, "rgba(0,0,0,.35)");
+  g.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = g;
+  ctx.beginPath(); ctx.ellipse(x, y, w, w*0.3, 0, 0, Math.PI*2); ctx.fill();
+}
+
+// 目（立体・つやあり）
+function eye(ctx, x, y, r, look){
+  ctx.fillStyle = "#fff";
+  ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = "rgba(0,0,0,.08)";
+  ctx.beginPath(); ctx.arc(x, y+r*0.3, r, 0, Math.PI); ctx.fill();
+  ctx.fillStyle = "#3a2a1a";
+  ctx.beginPath(); ctx.arc(x+look, y+r*0.15, r*0.5, 0, Math.PI*2); ctx.fill();
+  ctx.fillStyle = "#fff";
+  ctx.beginPath(); ctx.arc(x+look-r*0.15, y-r*0.1, r*0.18, 0, Math.PI*2); ctx.fill();
+}
+
+// ===== 各キャラの描画 =====
+
+// 主人公（8歳の男の子）
+function drawBoy(ctx, t){
+  const cx=110, cy=150, bob=Math.sin(t*2)*4;
+  groundShadow(ctx, cx, 250, 60);
+  ctx.save(); ctx.translate(0, bob);
+  // 脚
+  capsule(ctx, cx-16, 195, 18, 45, "#2f4f8a", "#5a7fc0", "#1e3460");
+  capsule(ctx, cx+16, 195, 18, 45, "#2f4f8a", "#5a7fc0", "#1e3460");
+  // 靴
+  sphere(ctx, cx-16, 244, 13, "#fff", "#fff", "#cfd6e0");
+  sphere(ctx, cx+16, 244, 13, "#fff", "#fff", "#cfd6e0");
+  // 胴（赤シャツ）
+  capsule(ctx, cx, 130, 56, 70, "#e8412e", "#ff8a78", "#a8281a");
+  // 腕
+  capsule(ctx, cx-32, 132, 16, 50, "#ffd11a", "#ffe785", "#d49b00");
+  capsule(ctx, cx+32, 132, 16, 50, "#ffd11a", "#ffe785", "#d49b00");
+  // 顔
+  sphere(ctx, cx, 95, 38, "#ffd11a", "#ffe785", "#cf9c00");
+  // 鼻
+  sphere(ctx, cx+24, 100, 9, "#ffd11a", "#ffe785", "#cf9c00");
+  // 髪（トゲ）
+  ctx.fillStyle = "#3a2a14";
+  ctx.beginPath();
+  ctx.moveTo(cx-34, 78);
+  for(let i=0;i<7;i++){const px=cx-34+i*10;ctx.lineTo(px+4,55);ctx.lineTo(px+10,78);}
+  ctx.lineTo(cx+34, 84); ctx.closePath(); ctx.fill();
+  // 目・口
+  eye(ctx, cx+8, 92, 9, 3);
+  eye(ctx, cx-12, 92, 9, 3);
+  ctx.strokeStyle="#9a6a00"; ctx.lineWidth=3; ctx.lineCap="round";
+  ctx.beginPath(); ctx.arc(cx+4, 112, 10, 0.1, Math.PI*0.7); ctx.stroke();
+  ctx.restore();
+}
+
+// マダム
+function drawMadam(ctx, t){
+  const cx=110, cy=150, bob=Math.sin(t*2+1)*3;
+  groundShadow(ctx, cx, 250, 60);
+  ctx.save(); ctx.translate(0, bob);
+  // ドレス（裾広がり）
+  const g=ctx.createLinearGradient(cx-50,0,cx+50,0);
+  g.addColorStop(0,"#b8316f"); g.addColorStop(0.5,"#ff8fc0"); g.addColorStop(1,"#b8316f");
+  ctx.fillStyle=g;
+  ctx.beginPath();
+  ctx.moveTo(cx-22,120); ctx.lineTo(cx-52,245);
+  ctx.quadraticCurveTo(cx,265,cx+52,245); ctx.lineTo(cx+22,120); ctx.closePath(); ctx.fill();
+  // 腕
+  capsule(ctx, cx-30, 130, 14, 48, "#ffd11a", "#ffe785", "#d49b00");
+  capsule(ctx, cx+30, 130, 14, 48, "#ffd11a", "#ffe785", "#d49b00");
+  // 顔
+  sphere(ctx, cx, 95, 36, "#ffd11a", "#ffe785", "#cf9c00");
+  sphere(ctx, cx+22, 100, 8, "#ffd11a", "#ffe785", "#cf9c00");
+  // まとめ髪（白）
+  sphere(ctx, cx, 62, 24, "#dcdcdc", "#fff", "#b5b5b5");
+  sphere(ctx, cx-26, 88, 12, "#dcdcdc", "#fff", "#b5b5b5");
+  sphere(ctx, cx+26, 88, 12, "#dcdcdc", "#fff", "#b5b5b5");
+  // 真珠ネックレス
+  for(let i=0;i<5;i++) sphere(ctx, cx-16+i*8, 128, 3.4, "#fff", "#fff", "#d8d8e0");
+  // 目・口
+  eye(ctx, cx+6, 92, 8, 2); eye(ctx, cx-12, 92, 8, 2);
+  ctx.strokeStyle="#c0392b"; ctx.lineWidth=3; ctx.lineCap="round";
+  ctx.beginPath(); ctx.moveTo(cx-6,114); ctx.lineTo(cx+8,114); ctx.stroke();
+  ctx.restore();
+}
+
+// 市長
+function drawMayor(ctx, t){
+  const cx=110, bob=Math.sin(t*2+2)*3;
+  groundShadow(ctx, cx, 252, 64);
+  ctx.save(); ctx.translate(0, bob);
+  // 脚
+  capsule(ctx, cx-16, 200, 18, 44, "#23232f", "#44445a", "#15151f");
+  capsule(ctx, cx+16, 200, 18, 44, "#23232f", "#44445a", "#15151f");
+  sphere(ctx, cx-16, 248, 12, "#2a2a2a", "#555", "#111");
+  sphere(ctx, cx+16, 248, 12, "#2a2a2a", "#555", "#111");
+  // スーツ胴
+  capsule(ctx, cx, 130, 62, 76, "#2b2b3a", "#4a4a60", "#1a1a26");
+  // 白シャツ＆タスキ
+  ctx.fillStyle="#f4f4f4";
+  ctx.beginPath(); ctx.moveTo(cx-8,118);ctx.lineTo(cx+8,118);ctx.lineTo(cx,160);ctx.closePath();ctx.fill();
+  ctx.strokeStyle="#d4203a"; ctx.lineWidth=12; ctx.lineCap="round";
+  ctx.beginPath(); ctx.moveTo(cx-26,116); ctx.lineTo(cx+24,178); ctx.stroke();
+  // 腕
+  capsule(ctx, cx-34, 132, 16, 52, "#2b2b3a", "#4a4a60", "#1a1a26");
+  capsule(ctx, cx+34, 132, 16, 52, "#2b2b3a", "#4a4a60", "#1a1a26");
+  // 顔
+  sphere(ctx, cx, 92, 38, "#ffd11a", "#ffe785", "#cf9c00");
+  sphere(ctx, cx+24, 98, 9, "#ffd11a", "#ffe785", "#cf9c00");
+  // 口ひげ
+  ctx.fillStyle="#3a2a14";
+  ctx.beginPath(); ctx.ellipse(cx+4,112,16,6,0,0,Math.PI*2); ctx.fill();
+  // 目
+  eye(ctx, cx+8, 88, 8, 2); eye(ctx, cx-10, 88, 8, 2);
+  // シルクハット
+  ctx.fillStyle="#15151a";
+  ctx.beginPath(); ctx.ellipse(cx,62,34,9,0,0,Math.PI*2); ctx.fill(); // つば
+  const hg=ctx.createLinearGradient(cx-18,0,cx+18,0);
+  hg.addColorStop(0,"#15151a");hg.addColorStop(0.5,"#3a3a46");hg.addColorStop(1,"#15151a");
+  ctx.fillStyle=hg; ctx.fillRect(cx-18,24,36,40);
+  ctx.fillStyle="#d4203a"; ctx.fillRect(cx-18,52,36,6);
+  ctx.beginPath(); ctx.ellipse(cx,24,18,6,0,0,Math.PI*2); ctx.fillStyle="#2a2a32"; ctx.fill();
+  ctx.restore();
+}
+
+// 車（つやのある立体車）
+function drawCar(ctx, t){
+  const cx=110, cy=160, bob=Math.sin(t*2)*2;
+  groundShadow(ctx, cx, 215, 80);
+  ctx.save(); ctx.translate(0, bob);
+  // 車体下部
+  const bg=ctx.createLinearGradient(0,130,0,200);
+  bg.addColorStop(0,"#ff7a6a"); bg.addColorStop(0.5,"#e74c3c"); bg.addColorStop(1,"#a52a1e");
+  ctx.fillStyle=bg;
+  ctx.beginPath();
+  ctx.moveTo(cx-85,185);
+  ctx.quadraticCurveTo(cx-92,150,cx-55,148);
+  ctx.quadraticCurveTo(cx-40,118,cx,116);
+  ctx.quadraticCurveTo(cx+40,118,cx+55,148);
+  ctx.quadraticCurveTo(cx+92,150,cx+85,185);
+  ctx.quadraticCurveTo(cx,205,cx-85,185); ctx.closePath(); ctx.fill();
+  // 窓（光沢ガラス）
+  const wg=ctx.createLinearGradient(0,120,0,160);
+  wg.addColorStop(0,"#dff4ff"); wg.addColorStop(1,"#7fb6d8");
+  ctx.fillStyle=wg;
+  ctx.beginPath();
+  ctx.moveTo(cx-44,148); ctx.quadraticCurveTo(cx-34,126,cx,124);
+  ctx.quadraticCurveTo(cx+34,126,cx+44,148); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle="rgba(255,255,255,.6)"; ctx.lineWidth=3;
+  ctx.beginPath(); ctx.moveTo(cx-30,146); ctx.lineTo(cx-18,130); ctx.stroke();
+  // ボディの照り返し
+  ctx.strokeStyle="rgba(255,255,255,.45)"; ctx.lineWidth=5; ctx.lineCap="round";
+  ctx.beginPath(); ctx.moveTo(cx-70,170); ctx.quadraticCurveTo(cx,184,cx+70,170); ctx.stroke();
+  // ヘッドライト
+  sphere(ctx, cx+80, 168, 9, "#fff6cf", "#fff", "#e6c66a");
+  // タイヤ（立体）
+  for(const wx of [cx-50, cx+50]){
+    sphere(ctx, wx, 195, 20, "#2a2a2a", "#555", "#0c0c0c");
+    sphere(ctx, wx, 195, 9, "#9aa0ab", "#cfd6e0", "#6a7080");
+  }
+  ctx.restore();
+}
+
+// ===== 表示 =====
+const cards = [
+  {label:"主人公（男の子）", pt:"操作キャラ", fn:drawBoy},
+  {label:"マダム", pt:"100点", fn:drawMadam},
+  {label:"市長", pt:"1000点（超レア）", fn:drawMayor},
+  {label:"車", pt:"30点", fn:drawCar},
+];
+const grid = document.getElementById("grid");
+const insts = [];
+for(const c of cards){
+  const card=document.createElement("div"); card.className="card";
+  const cv=document.createElement("canvas"); cv.width=220; cv.height=270;
+  const lb=document.createElement("div"); lb.className="label"; lb.textContent=c.label;
+  const pt=document.createElement("div"); pt.className="pt"; pt.textContent=c.pt;
+  card.appendChild(cv); card.appendChild(lb); card.appendChild(pt);
+  grid.appendChild(card);
+  insts.push({ctx:cv.getContext("2d"), fn:c.fn, cv});
+}
+function loop(now){
+  const t = now/1000;
+  for(const it of insts){
+    it.ctx.clearRect(0,0,it.cv.width,it.cv.height);
+    it.fn(it.ctx, t);
+  }
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

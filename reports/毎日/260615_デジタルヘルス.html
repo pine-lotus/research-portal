@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>260615 デジタルヘルス（遠隔医療・PHR）</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; max-width: 800px; margin: 48px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.8; background: #f9f9f7; }
+    header { background: #1a1a2e; color: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 36px; }
+    header h1 { font-size: 1.4rem; margin: 0 0 8px; font-weight: 700; }
+    header p { margin: 0; font-size: 0.9rem; opacity: 0.7; }
+    section { background: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    h2 { font-size: 1.1rem; font-weight: 700; margin-top: 0; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; color: #1a1a2e; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: #333; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 12px; }
+    th { background: #f4f4f4; text-align: left; padding: 10px 14px; font-weight: 600; border-bottom: 2px solid #e0e0e0; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f0f0f0; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    ul, ol { padding-left: 20px; margin: 8px 0; }
+    li { margin-bottom: 6px; }
+    blockquote { background: #f0f4ff; border-left: 4px solid #3b5bdb; border-radius: 0 8px 8px 0; margin: 16px 0; padding: 14px 18px; font-weight: 700; color: #1a1a2e; }
+    .stat { display: inline-block; background: #fff3e0; color: #e65100; font-weight: 700; padding: 1px 6px; border-radius: 4px; }
+    .checklist li { list-style: none; padding-left: 4px; }
+    .checklist li::before { content: "☐ "; color: #888; }
+    .sources a { color: #1565c0; text-decoration: none; font-size: 0.88rem; }
+    .sources li { margin-bottom: 4px; }
+    footer { text-align: center; font-size: 0.78rem; color: #aaa; margin-top: 32px; }
+  </style>
+</head>
+<body>
+<a style="display:inline-block;margin:16px 0 0 24px;font-size:.85rem;color:#3b5bdb;text-decoration:none" href="../../portal.html">← ポータルに戻る</a>
+<header>
+  <p>新規事業リサーチレポート</p>
+  <h1>デジタルヘルス（遠隔医療・PHR）</h1>
+  <p>作成日：2026-06-15</p>
+</header>
+
+<!-- ① 競合・先行事例 -->
+<section>
+  <h2>① 競合・先行事例</h2>
+  <table>
+    <tr>
+      <th>企業名</th>
+      <th>解いている課題</th>
+      <th>収益化の方法</th>
+      <th>差別化ポイント</th>
+    </tr>
+    <tr>
+      <td><strong>メドレー<br>（CLINICS）</strong></td>
+      <td>患者の通院負担・医療機関の予約電話業務の非効率</td>
+      <td>SaaS月額課金（医療機関向け）</td>
+      <td>予約→診療→決済→処方を一気通貫。医師求人サービス「MEDLEY」との相乗効果で医療機関の集患まで支援</td>
+    </tr>
+    <tr>
+      <td><strong>MICIN<br>（curon）</strong></td>
+      <td>オンライン診療の導入コスト・処方薬の配送手間</td>
+      <td>SaaS月額課金＋決済手数料</td>
+      <td>処方薬の自動配送ラベル印刷まで含む。医療機関のオペレーション負担を最小化する設計</td>
+    </tr>
+    <tr>
+      <td><strong>Ubie<br>（ユービー）</strong></td>
+      <td>問診時間の長さ・患者が症状をうまく説明できない問題</td>
+      <td>AI問診SaaS（医療機関向け）</td>
+      <td>患者が来院前にAIと問診→医師が診察に集中できる。救急・外来の両方に展開</td>
+    </tr>
+    <tr>
+      <td><strong>Personal Health Tech<br>（Kensapo）</strong></td>
+      <td>健診データが散在し活用されていない現状</td>
+      <td>B2B SaaS（企業・保険者向け）</td>
+      <td>2025年10月シリーズA累計<span class="stat">8億円</span>調達。NTTドコモベンチャーズが出資。PHR×行動変容を統合</td>
+    </tr>
+    <tr>
+      <td><strong>カケハシ<br>（Musubi）</strong></td>
+      <td>薬局での服薬フォローが来院時限りで途切れる問題</td>
+      <td>SaaS月額課金（薬局向け）</td>
+      <td>薬剤師→患者のアフターフォローをアプリで継続。患者の薬局リピーター化・服薬継続率の改善</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ② 市場規模・トレンド -->
+<section>
+  <h2>② 市場規模・トレンド</h2>
+  <h3>市場規模</h3>
+  <ul>
+    <li><strong>日本市場</strong>：2025年時点で約<span class="stat">314億ドル</span> → 2034年に約<span class="stat">583億ドル</span>（CAGR 6.9%）</li>
+    <li><strong>別予測</strong>：2024年に186億ドル → 2033年に<span class="stat">897億ドル</span>（CAGR ≒19%）</li>
+    <li><strong>グローバル</strong>：2026年に2,775〜3,848億ドル → 2034年に<span class="stat">1兆ドル超</span>（CAGR 17.8%）</li>
+    <li>国内遠隔医療スタートアップは<span class="stat">76社</span>、うち29社が資金調達済み（うちシリーズA以上は3社）</li>
+  </ul>
+  <h3>最新トレンド（2026年）</h3>
+  <ol>
+    <li><strong>2026年診療報酬改定：</strong>クラウド電子カルテの活用に診療報酬加算が検討されており、医療機関のデジタル化を制度側から後押し</li>
+    <li><strong>マイナポータル×PHR連携：</strong>全国医療情報プラットフォームが実装フェーズへ。個人が自分の健診・受診データを一元管理できる基盤が整備中</li>
+    <li><strong>大阪万博でPHR実証：</strong>2025年万博での実証プロジェクトを経て、PHR普及の国民的認知度が向上。普及加速期へ</li>
+    <li><strong>AI問診・AI診断支援の浸透：</strong>電子カルテへのAI診断支援システム統合が急速に拡大。医師の業務効率化と診断精度の両立が焦点</li>
+    <li><strong>予防医療へのシフト：</strong>高齢化による医療費増大を受け、企業・保険者が予防投資に本腰。PHRを活用した行動変容支援サービスへの需要が急拡大中</li>
+  </ol>
+</section>
+
+<!-- ③ 仮説 -->
+<section>
+  <h2>③ 仮説：差別化ポイント</h2>
+  <blockquote>PHRで継続蓄積した個人健康データをAIで分析し、「病気になる前の予防介入」を保険者（企業健保・国保組合）にB2Bで販売することで、既存の"受診便利化"プレイヤーとまったく異なるバリューチェーンを構築できる。</blockquote>
+  <h3>背景・根拠</h3>
+  <ul>
+    <li>既存のオンライン診療（メドレー・curon）は「受診のハードル低下」に特化しており、予防領域はほぼカバーしていない</li>
+    <li>企業健保組合は「データヘルス計画」の義務化を受けており、PHRデータを活用した疾病予防サービスへの予算を持っている</li>
+    <li>Personal Health Techが2025年に大型調達＋大手からの出資を獲得しており、PHR活用モデルへの市場の手応えが出てきている</li>
+    <li>診療報酬改定・マイナポータル整備が追い風となり、健康データの標準化・共有が加速する見込み</li>
+  </ul>
+</section>
+
+<!-- 次のアクション -->
+<section>
+  <h2>次のアクション候補</h2>
+  <ul class="checklist">
+    <li>企業健保組合の「データヘルス計画」担当者へのヒアリング（意思決定プロセスと予算規模の把握）</li>
+    <li>Personal Health Tech（Kensapo）など国内PHRスタートアップの最新動向・協業可能性の調査</li>
+    <li>2026年診療報酬改定の確定版を確認し、デジタルヘルス事業への具体的な影響を整理</li>
+    <li>大阪万博PHR実証プロジェクトの成果レポートを入手・分析</li>
+  </ul>
+</section>
+
+<!-- 参考リンク -->
+<section class="sources">
+  <h2>参考リンク</h2>
+  <ul>
+    <li><a href="https://newscast.jp/news/3768343">日本のデジタルヘルス市場予測（Newscast）</a></li>
+    <li><a href="https://www.globalresearch.co.jp/reports/japan-telehealth-market-verified/">遠隔医療の日本市場規模（Global Research）</a></li>
+    <li><a href="https://www.imarcgroup.com/japan-digital-health-market-statistics">Japan Digital Health Market（IMARC Group）</a></li>
+    <li><a href="https://www.openpr.com/news/4418894/japan-digital-health-market-expected-to-reach-us-51-42-billion">Japan Digital Health Market Expected to Reach USD 58.3B（OpenPR）</a></li>
+    <li><a href="https://tracxn.com/d/explore/telemedicine-startups-in-japan/__VPT7InKMfdAHT5Fdvo_0l4RwMHZpMt66EYI4RDkHmA8/companies">Top Telemedicine Startups in Japan（Tracxn）</a></li>
+    <li><a href="https://ph-tech.jp/">Personal Health Tech（Kensapo）</a></li>
+    <li><a href="https://www.meti.go.jp/policy/mono_info_service/healthcare/phr.html">経済産業省 PHR施策</a></li>
+    <li><a href="https://clinics-cloud.com/column/27/">オンライン診療サービス4社比較（CLINICS）</a></li>
+    <li><a href="https://curon.co/about">curon 機能と特長</a></li>
+    <li><a href="https://www.jeri.or.jp/survey/2040%E5%B9%B4%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%81%AE%E6%B4%BB%E7%94%A8%EF%BD%9E%E3%83%90%E3%83%BC%E3%83%81%E3%83%A3%E3%83%AB/">2040年に向けたデジタルヘルスの活用（日本経済研究所）</a></li>
+  </ul>
+</section>
+
+<footer>自動生成レポート — 新規事業リサーチ</footer>
+</body>
+</html>

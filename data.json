@@ -1,6 +1,287 @@
 {
   "articles": [
     {
+      "id": "260630_メンタルヘルステック",
+      "title": "メンタルヘルステック（精神・心理健康×テクノロジー）",
+      "date": "2026-06-30",
+      "tab": "daily",
+      "file": "reports/毎日/260630_メンタルヘルステック.html",
+      "summary": "日本のデジタルメンタルヘルス市場はCAGR 18.6%で急拡大。Awarefy・cotreeなど国内5社と海外勢を比較し、中小企業向け産業メンタルヘルスSaaSの差別化余地を検証。",
+      "companies": [
+        "Awarefy",
+        "cotree",
+        "Lyra Health",
+        "BetterHelp",
+        "Woebot Health"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "news_20260629",
+      "title": "週次ニュース（2026年6月22日〜6月28日）",
+      "date": "2026-06-29",
+      "tab": "news",
+      "file": "News/週次ニュース_20260629.html",
+      "summary": "代々木アニメーショングループ29億円・Arrowsmith10.5億円など計8件の調達。M&Aはジャパネット→ツインバードTOB87億円を含む9件。中小製造・建材系の事業承継M&Aが活発。",
+      "companies": [
+        "代々木アニメーショングループ",
+        "Kotoba Technologies",
+        "Arrowsmith",
+        "リーンモビリティ",
+        "NEXT NEW WORLD",
+        "ジャパネットホールディングス",
+        "ツインバード工業",
+        "サトー",
+        "エクストリーム",
+        "フォレストデジタル",
+        "Sales Retriever"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260629_観光テック（インバウンドDX）",
+      "title": "観光テック（インバウンドDX）",
+      "date": "2026-06-29",
+      "tab": "daily",
+      "file": "reports/毎日/260629_観光テック（インバウンドDX）.html",
+      "summary": "訪日外客4,270万人・消費額9.5兆円の過去最高を背景に急成長する観光テック市場を調査。Nutmeg・AVA Intelligence・WAmazing・triplaの4社を比較。地方中小観光事業者向けのAI多言語コンシェルジュ×直販予約の統合プラットフォームに参入余地あり。",
+      "companies": [
+        "NutmegLabs",
+        "AVA Intelligence",
+        "WAmazing",
+        "tripla"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260625_モビリティ・自動運転テック",
+      "title": "モビリティ・自動運転テック",
+      "date": "2026-06-25",
+      "tab": "daily",
+      "file": "reports/毎日/260625_モビリティ・自動運転テック.html",
+      "summary": "自動運転技術市場は2034年に494億ドル規模へ（CAGR 21.5%）。Tier IV・Turing・newmoの日本勢3社が「オープンソース×社会課題」で独自ポジションを構築中。",
+      "companies": [
+        "Tier IV",
+        "Turing",
+        "newmo",
+        "Waymo",
+        "May Mobility"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260624_GovTech行政DX",
+      "title": "GovTech（行政DX）",
+      "date": "2026-06-24",
+      "tab": "daily",
+      "file": "reports/毎日/260624_GovTech行政DX.html",
+      "summary": "行政DXを推進するGovTechスタートアップを調査。グラファー・LoGo・PoliPoliなど5社を比較。グローバル市場は2026年に約8,824億ドル規模、日本国内は約9,900億円。DMP本格稼働でスタートアップ参入機会が拡大。",
+      "companies": [
+        "グラファー",
+        "PoliPoli",
+        "Synspective",
+        "LoGo",
+        "TRUSTDOCK"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260622_ケアテック",
+      "title": "ケアテック（介護テック）",
+      "date": "2026-06-22",
+      "tab": "daily",
+      "file": "reports/毎日/260622_ケアテック.html",
+      "summary": "超高齢社会の介護現場をAI・IoTで変革するケアテック領域を調査。ウェルモ・DFree・PLIMESなど国内5社の事業モデルと、2030年に25兆円規模へ成長する介護市場のトレンドを整理。",
+      "companies": [
+        "ウェルモ",
+        "Care Viewer",
+        "DFree",
+        "PLIMES",
+        "Opt Fit"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260622_インシュアテック",
+      "title": "インシュアテック（保険テック）— 日本の保険DX最前線",
+      "date": "2026-06-22",
+      "tab": "daily",
+      "file": "reports/毎日/260622_インシュアテック.html",
+      "summary": "日本のインシュアテック市場はCAGR 40%の超高成長（2035年に1兆円超へ）。justInCase・Finatext・Wizleap・iChainの4社を分析。大手保険会社のSX（システム刷新）支援×組込保険APIという参入戦略が最大の白地。",
+      "companies": [
+        "justInCase Technologies",
+        "Finatext HD",
+        "Wizleap",
+        "iChain"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260620_フードテック",
+      "title": "フードテック（代替タンパク・培養肉・フードロス削減）",
+      "date": "2026-06-20",
+      "tab": "daily",
+      "file": "reports/毎日/260620_フードテック.html",
+      "summary": "代替タンパク・培養肉・フードロス削減の3領域を軸に、2050年で世界約280兆円市場へ成長見込みのフードテック分野の国内外プレイヤーを分析。インテグリカルチャー・DAIZ・ネクストミーツ・クラダシ・Beyond Meatの5社を比較。",
+      "companies": [
+        "インテグリカルチャー",
+        "DAIZ",
+        "ネクストミーツ",
+        "クラダシ",
+        "Beyond Meat"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260619_アグリテック",
+      "title": "アグリテック（農業DX・スマート農業）",
+      "date": "2026-06-19",
+      "tab": "daily",
+      "file": "reports/毎日/260619_アグリテック.html",
+      "summary": "担い手不足が深刻化する農業市場（国内2025年：約3,885億円）で収穫ロボット・IoT畜産管理・垂直農場が急拡大。食品企業向け農業参入ワンストップ支援に白地あり。",
+      "companies": [
+        "inaho",
+        "AGRIST",
+        "ファームノート",
+        "Oishii Farm",
+        "HarvestX"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "news_20260615",
+      "title": "週次ニュース（2026年6月8日〜6月14日）",
+      "date": "2026-06-15",
+      "tab": "news",
+      "file": "News/週次ニュース_20260615.html",
+      "summary": "JSBへの約2,000億円TOB（ウォーバーグ・ピンカス）が最大トピック。メタプラネットがSiiibo証券を21億円で買収し「メタプラネット証券」設立へ。調達はトリファ50億（eSIM・シリーズC）、ALGO ARTIS 15.4億、LinQ 11億（シリーズA）。",
+      "companies": [
+        "ジェイ・エス・ビー",
+        "ウォーバーグ・ピンカス",
+        "メタプラネット",
+        "Siiibo証券",
+        "トリファ",
+        "ALGO ARTIS",
+        "LinQ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260618_サイバーセキュリティ",
+      "title": "サイバーセキュリティ（CyberSecurity）",
+      "date": "2026-06-18",
+      "tab": "daily",
+      "file": "reports/毎日/260618_サイバーセキュリティ.html",
+      "summary": "国内市場は2031年に2.8兆円へ拡大。OT製造セキュリティ・AI自動化・ゼロトラスト義務化が成長牽引。中堅製造業向け空白あり。",
+      "companies": [
+        "サイバーセキュリティクラウド",
+        "Flatt Security",
+        "Japan Cyber Defense",
+        "AeyeScan",
+        "Trend Micro"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260617_物流テック",
+      "title": "物流テック（ラストワンマイル・自動化）",
+      "date": "2026-06-17",
+      "tab": "daily",
+      "file": "reports/毎日/260617_物流テック.html",
+      "summary": "2024年問題でドライバー不足が深刻化する中、配送ロボット・AIルーティング・フルフィルメントSaaSが急成長。国内ラストワンマイル市場は2025年に約3.4兆円規模に達する見込み。",
+      "companies": [
+        "Hacobu",
+        "LOMBY",
+        "オープンロジ",
+        "Azoop",
+        "楽天グループ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260616_エドテック",
+      "title": "エドテック（AI個別最適化学習）",
+      "date": "2026-06-16",
+      "tab": "daily",
+      "file": "reports/毎日/260616_エドテック.html",
+      "summary": "AI個別最適化学習市場を牽引する国内外5社を調査。atama+・Qubena・すらら・Khanmigo・Duolingo Maxの収益モデルと差別化を分析し、「ライフタイム学習データ一元化」による競争優位を提言。",
+      "companies": [
+        "atama plus",
+        "すらら",
+        "COMPASS",
+        "Khan Academy",
+        "Duolingo"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260616_プロップテック",
+      "title": "プロップテック（不動産DX）",
+      "date": "2026-06-16",
+      "tab": "daily",
+      "file": "reports/毎日/260616_プロップテック.html",
+      "summary": "空き家900万戸問題×AI×行政API連携を軸に、日本独自のプロップテック参入機会を分析。GA technologies・LIFULL・Smooth・Opendoor・Matterportの5社を比較。",
+      "companies": [
+        "GA technologies",
+        "RENOSY",
+        "ITANDI",
+        "LIFULL",
+        "Smooth",
+        "Opendoor",
+        "Matterport"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260616_建設テック",
+      "title": "建設テック（ConTech）",
+      "date": "2026-06-16",
+      "tab": "daily",
+      "file": "reports/毎日/260616_建設テック.html",
+      "summary": "施工管理SaaSが乱立する建設テック市場。2024年問題による人手不足を背景に2030年には1,250億円規模へ。資材調達・原価管理・書類作成をAI一気通貫化する統合プラットフォームが次の競争軸に。",
+      "companies": [
+        "アンドパッド",
+        "スパイダープラス",
+        "フォトラクション",
+        "清水建設",
+        "鹿島建設",
+        "インフォマート"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "260614_エンベデッドファイナンス",
+      "title": "エンベデッドファイナンス（組込み型金融・BaaS）",
+      "date": "2026-06-14",
+      "tab": "daily",
+      "file": "reports/毎日/260614_エンベデッドファイナンス.html",
+      "summary": "非金融企業が金融機能を自社サービスに組み込む「エンベデッドファイナンス」の市場を調査。グローバル市場は2031年に約4,545億ドル（CAGR 23.84%）まで成長見込み。日本では住信SBIネット銀行がNEOBANKとしてJAL・京王・高島屋等にBaaS提供し100万件突破。中規模事業者向けの業種特化型BaaSプラットフォームに参入余地あり。",
+      "companies": [
+        "住信SBIネット銀行",
+        "フィデックス",
+        "Stripe",
+        "Marqeta",
+        "Unit"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
       "id": "260614_HRテック",
       "title": "HRテック（人事・採用DX・タレントマネジメント）",
       "date": "2026-06-14",
@@ -806,9 +1087,446 @@
       ],
       "pinned": false,
       "public": false
+    },
+    {
+      "id": "company_デジライズ_20260616",
+      "title": "株式会社デジライズ（DigiRise）調査レポート",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/デジライズ_20260616.html",
+      "summary": "生成AIの法人導入を研修・SaaS・開発までワンストップ支援するAI-DX企業。創業者・茶圓氏のSNS発信力をCACゼロの集客装置に転換し、GMOから資金調達。導入560社超。属人性が最大リスク。",
+      "companies": [
+        "デジライズ",
+        "GMOインターネットグループ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_エクサウィザーズ_20260616",
+      "title": "株式会社エクサウィザーズ（ExaWizards）調査レポート【デジライズ競合①】",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/エクサウィザーズ_競合①_20260616.html",
+      "summary": "AI基盤exaBaseを軸に大企業・官公庁のDXを一気通貫支援する上場AI企業。売上119.96億円・黒字化。デジライズが目指す『組織・技術型』の将来像。",
+      "companies": [
+        "エクサウィザーズ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_ELYZA_20260616",
+      "title": "株式会社ELYZA（イライザ）調査レポート【デジライズ競合②】",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/ELYZA_競合②_20260616.html",
+      "summary": "東大松尾研発、日本最高水準の日本語LLMを開発するAIカンパニー。2024年KDDI子会社化、計算基盤に1000億円投資。技術トップダウン型で独自LLM領域でデジライズと競合。",
+      "companies": [
+        "ELYZA",
+        "KDDI"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_SHIFTAI_20260616",
+      "title": "株式会社SHIFT AI（シフトAI）調査レポート【デジライズ競合③】",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/SHIFT-AI_競合③_20260616.html",
+      "summary": "木内翔大氏（SAMURAI ENGINEER創業者）率いる生成AI学習コミュニティ＋法人研修。『個人ブランド×AI研修』モデルがデジライズと最も酷似する正面競合。",
+      "companies": [
+        "SHIFT AI"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_キカガク_20260616",
+      "title": "株式会社キカガク 調査レポート【デジライズ競合④】",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/キカガク_競合④_20260616.html",
+      "summary": "2017年創業のAI・DX研修老舗。実データ課題解決型(PBL)研修と経産省認定が強み。累計15万人受講・約1000社支援。属人性が低い組織型で生成AI新興勢と対照的。",
+      "companies": [
+        "キカガク"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_比較_AI-DXコンサル_20260616",
+      "title": "【比較】AI-DX・生成AI導入支援市場 デジライズ vs 競合4社",
+      "date": "2026-06-16",
+      "tab": "company",
+      "file": "reports/企業調査/AI-DXコンサル/【比較】AI-DXコンサル市場_20260616.html",
+      "summary": "デジライズと競合4社を『技術の深さ×集客の型』で比較。技術トップダウン型(エクサ・ELYZA)／個人ブランド研修型(デジライズ・SHIFT AI)／実績老舗(キカガク)の3層に整理。最近接競合はSHIFT AI。",
+      "companies": [
+        "デジライズ",
+        "エクサウィザーズ",
+        "ELYZA",
+        "SHIFT AI",
+        "キカガク"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_電通総研_20260629",
+      "title": "電通総研 調査レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/電通総研_20260629.html",
+      "summary": "電通グループ傘下のITコンサル・SIer。SI×コンサル×シンクタンクを統合した「第3創業期」を推進。10期連続増収・8期連続最高益、2025年12月期売上1,649億円。製造業BOM管理システムで国内自動車メーカー全社採用という圧倒的シェアを持つ。",
+      "companies": [
+        "電通総研",
+        "電通グループ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_NRI_20260629",
+      "title": "野村総合研究所（NRI） 調査レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/野村総合研究所_競合①_20260629.html",
+      "summary": "電通総研の競合①。金融インフラの圧倒的シェアを持つSIer＋コンサル企業。営業利益率18%は業界最高水準。売上7,648億円（2025年3月期）。社内生成AI利用率80%超で国内最先端。",
+      "companies": [
+        "野村総合研究所",
+        "NRI"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_NTTデータ_20260629",
+      "title": "NTTデータグループ 調査レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/NTTデータ_競合②_20260629.html",
+      "summary": "電通総研の競合②。国内最大・グローバルトップクラスのSIer。売上5兆46億円（2025年度）、受注高6兆円超で過去最高を更新。AIエージェント基盤「NTT DATA AIVista」を設立し、AI変革パートナーへ転換中。",
+      "companies": [
+        "NTTデータグループ",
+        "NTTデータ"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_アクセンチュア_20260629",
+      "title": "アクセンチュア（日本法人） 調査レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/アクセンチュア_競合③_20260629.html",
+      "summary": "電通総研の競合③。グローバル70万人・日本法人2.9万人の最大手コンサルファーム。FY2025グローバル売上697億ドル、生成AI受注59億ドル。戦略〜実装〜BPOを一気通貫で提供する業界最先端のAI対応企業。",
+      "companies": [
+        "アクセンチュア"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "company_CTC_20260629",
+      "title": "伊藤忠テクノソリューションズ（CTC） 調査レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/伊藤忠テクノソリューションズ_競合④_20260629.html",
+      "summary": "電通総研の競合④。伊藤忠商事グループ傘下の総合ITサービス企業。売上7,937億円（2025年度）で過去最高を更新、NRI超えが視野に。マルチベンダー中立×総合商社ネットワークが独自の強み。",
+      "companies": [
+        "伊藤忠テクノソリューションズ",
+        "CTC"
+      ],
+      "pinned": false,
+      "public": false
+    },
+    {
+      "id": "compare_ITコンサルSIer_20260629",
+      "title": "【比較】ITコンサル・SIer市場 比較レポート",
+      "date": "2026-06-29",
+      "tab": "company",
+      "file": "reports/企業調査/ITコンサル・SIer/【比較】ITコンサル・SIer市場_20260629.html",
+      "summary": "電通総研・NRI・NTTデータ・アクセンチュア・CTCの5社比較。規模・ビジネスモデル・AI対応・センターピンを横断分析。地方中小向けDXコンサル市場が5社すべてにとってのホワイトスペースであることを示す。",
+      "companies": [
+        "電通総研",
+        "野村総合研究所",
+        "NTTデータグループ",
+        "アクセンチュア",
+        "伊藤忠テクノソリューションズ"
+      ],
+      "pinned": false,
+      "public": false
     }
   ],
   "company_index": {
+    "Awarefy": [
+      "260630_メンタルヘルステック"
+    ],
+    "cotree": [
+      "260630_メンタルヘルステック"
+    ],
+    "Lyra Health": [
+      "260630_メンタルヘルステック"
+    ],
+    "BetterHelp": [
+      "260630_メンタルヘルステック"
+    ],
+    "Woebot Health": [
+      "260630_メンタルヘルステック"
+    ],
+    "代々木アニメーショングループ": [
+      "news_20260629"
+    ],
+    "Kotoba Technologies": [
+      "news_20260629"
+    ],
+    "Arrowsmith": [
+      "news_20260629"
+    ],
+    "リーンモビリティ": [
+      "news_20260629"
+    ],
+    "NEXT NEW WORLD": [
+      "news_20260629"
+    ],
+    "ジャパネットホールディングス": [
+      "news_20260629"
+    ],
+    "ツインバード工業": [
+      "news_20260629"
+    ],
+    "サトー": [
+      "news_20260629"
+    ],
+    "エクストリーム": [
+      "news_20260629"
+    ],
+    "フォレストデジタル": [
+      "news_20260629"
+    ],
+    "Sales Retriever": [
+      "news_20260629"
+    ],
+    "NutmegLabs": [
+      "260629_観光テック（インバウンドDX）"
+    ],
+    "AVA Intelligence": [
+      "260629_観光テック（インバウンドDX）"
+    ],
+    "WAmazing": [
+      "260629_観光テック（インバウンドDX）"
+    ],
+    "tripla": [
+      "260629_観光テック（インバウンドDX）"
+    ],
+    "Tier IV": [
+      "260625_モビリティ・自動運転テック"
+    ],
+    "Turing": [
+      "260625_モビリティ・自動運転テック"
+    ],
+    "newmo": [
+      "260625_モビリティ・自動運転テック"
+    ],
+    "Waymo": [
+      "260625_モビリティ・自動運転テック"
+    ],
+    "May Mobility": [
+      "260625_モビリティ・自動運転テック"
+    ],
+    "グラファー": [
+      "260624_GovTech行政DX"
+    ],
+    "PoliPoli": [
+      "260624_GovTech行政DX"
+    ],
+    "Synspective": [
+      "260624_GovTech行政DX"
+    ],
+    "LoGo": [
+      "260624_GovTech行政DX"
+    ],
+    "TRUSTDOCK": [
+      "260624_GovTech行政DX"
+    ],
+    "ウェルモ": [
+      "260622_ケアテック"
+    ],
+    "Care Viewer": [
+      "260622_ケアテック"
+    ],
+    "DFree": [
+      "260622_ケアテック"
+    ],
+    "PLIMES": [
+      "260622_ケアテック"
+    ],
+    "Opt Fit": [
+      "260622_ケアテック"
+    ],
+    "justInCase Technologies": [
+      "260622_インシュアテック"
+    ],
+    "Finatext HD": [
+      "260622_インシュアテック"
+    ],
+    "Wizleap": [
+      "260622_インシュアテック"
+    ],
+    "iChain": [
+      "260622_インシュアテック"
+    ],
+    "インテグリカルチャー": [
+      "260620_フードテック"
+    ],
+    "DAIZ": [
+      "260620_フードテック"
+    ],
+    "ネクストミーツ": [
+      "260620_フードテック"
+    ],
+    "クラダシ": [
+      "260620_フードテック"
+    ],
+    "Beyond Meat": [
+      "260620_フードテック"
+    ],
+    "inaho": [
+      "260619_アグリテック"
+    ],
+    "AGRIST": [
+      "260619_アグリテック"
+    ],
+    "ファームノート": [
+      "260619_アグリテック"
+    ],
+    "Oishii Farm": [
+      "260619_アグリテック"
+    ],
+    "HarvestX": [
+      "260619_アグリテック"
+    ],
+    "ジェイ・エス・ビー": [
+      "news_20260615"
+    ],
+    "ウォーバーグ・ピンカス": [
+      "news_20260615"
+    ],
+    "メタプラネット": [
+      "news_20260615"
+    ],
+    "Siiibo証券": [
+      "news_20260615"
+    ],
+    "トリファ": [
+      "news_20260615"
+    ],
+    "ALGO ARTIS": [
+      "news_20260615"
+    ],
+    "LinQ": [
+      "news_20260615"
+    ],
+    "サイバーセキュリティクラウド": [
+      "260618_サイバーセキュリティ"
+    ],
+    "Flatt Security": [
+      "260618_サイバーセキュリティ"
+    ],
+    "Japan Cyber Defense": [
+      "260618_サイバーセキュリティ"
+    ],
+    "AeyeScan": [
+      "260618_サイバーセキュリティ"
+    ],
+    "Trend Micro": [
+      "260618_サイバーセキュリティ"
+    ],
+    "Hacobu": [
+      "260617_物流テック"
+    ],
+    "LOMBY": [
+      "260617_物流テック"
+    ],
+    "オープンロジ": [
+      "260617_物流テック"
+    ],
+    "Azoop": [
+      "260617_物流テック"
+    ],
+    "楽天グループ": [
+      "260617_物流テック"
+    ],
+    "atama plus": [
+      "260616_エドテック"
+    ],
+    "すらら": [
+      "260616_エドテック"
+    ],
+    "COMPASS": [
+      "260616_エドテック"
+    ],
+    "Khan Academy": [
+      "260616_エドテック"
+    ],
+    "Duolingo": [
+      "260616_エドテック"
+    ],
+    "GA technologies": [
+      "260616_プロップテック"
+    ],
+    "RENOSY": [
+      "260616_プロップテック"
+    ],
+    "ITANDI": [
+      "260616_プロップテック"
+    ],
+    "LIFULL": [
+      "260616_プロップテック"
+    ],
+    "Smooth": [
+      "260616_プロップテック"
+    ],
+    "Opendoor": [
+      "260616_プロップテック"
+    ],
+    "Matterport": [
+      "260616_プロップテック"
+    ],
+    "アンドパッド": [
+      "260616_建設テック"
+    ],
+    "スパイダープラス": [
+      "260616_建設テック"
+    ],
+    "フォトラクション": [
+      "260616_建設テック"
+    ],
+    "清水建設": [
+      "260616_建設テック"
+    ],
+    "鹿島建設": [
+      "260616_建設テック"
+    ],
+    "インフォマート": [
+      "260616_建設テック"
+    ],
+    "住信SBIネット銀行": [
+      "260614_エンベデッドファイナンス"
+    ],
+    "フィデックス": [
+      "260614_エンベデッドファイナンス"
+    ],
+    "Stripe": [
+      "260614_エンベデッドファイナンス"
+    ],
+    "Marqeta": [
+      "260614_エンベデッドファイナンス"
+    ],
+    "Unit": [
+      "260614_エンベデッドファイナンス"
+    ],
     "SmartHR": [
       "260614_HRテック"
     ],
@@ -1160,6 +1878,64 @@
     ],
     "株式会社日立コンサルティング": [
       "company_日立コンサルティング_20260602"
+    ],
+    "デジライズ": [
+      "company_デジライズ_20260616",
+      "company_比較_AI-DXコンサル_20260616"
+    ],
+    "GMOインターネットグループ": [
+      "company_デジライズ_20260616"
+    ],
+    "エクサウィザーズ": [
+      "company_エクサウィザーズ_20260616",
+      "company_比較_AI-DXコンサル_20260616"
+    ],
+    "ELYZA": [
+      "company_ELYZA_20260616",
+      "company_比較_AI-DXコンサル_20260616"
+    ],
+    "KDDI": [
+      "company_ELYZA_20260616"
+    ],
+    "SHIFT AI": [
+      "company_SHIFTAI_20260616",
+      "company_比較_AI-DXコンサル_20260616"
+    ],
+    "キカガク": [
+      "company_キカガク_20260616",
+      "company_比較_AI-DXコンサル_20260616"
+    ],
+    "電通総研": [
+      "company_電通総研_20260629",
+      "compare_ITコンサルSIer_20260629"
+    ],
+    "電通グループ": [
+      "company_電通総研_20260629"
+    ],
+    "野村総合研究所": [
+      "company_NRI_20260629",
+      "compare_ITコンサルSIer_20260629"
+    ],
+    "NRI": [
+      "company_NRI_20260629"
+    ],
+    "NTTデータグループ": [
+      "company_NTTデータ_20260629",
+      "compare_ITコンサルSIer_20260629"
+    ],
+    "NTTデータ": [
+      "company_NTTデータ_20260629"
+    ],
+    "アクセンチュア": [
+      "company_アクセンチュア_20260629",
+      "compare_ITコンサルSIer_20260629"
+    ],
+    "伊藤忠テクノソリューションズ": [
+      "company_CTC_20260629",
+      "compare_ITコンサルSIer_20260629"
+    ],
+    "CTC": [
+      "company_CTC_20260629"
     ]
   }
 }

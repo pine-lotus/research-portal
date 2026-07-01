@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリップボード同期</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      letter-spacing: 0.05em;
+    }
+
+    #status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    #status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #333;
+      transition: background 0.3s;
+    }
+
+    #status-dot.connected { background: #22c55e; }
+    #status-dot.syncing   { background: #f59e0b; }
+    #status-dot.error     { background: #ef4444; }
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      background: #111;
+      color: #f0f0f0;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 16px;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      border-color: #444;
+    }
+
+    textarea::placeholder {
+      color: #333;
+    }
+
+    footer {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    button {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:active { opacity: 0.7; }
+
+    #btn-copy {
+      background: #fff;
+      color: #000;
+    }
+
+    #btn-clear {
+      background: #1a1a1a;
+      color: #888;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #22c55e;
+      color: #000;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📋 クリップボード同期</h1>
+    <div id="status">
+      <div id="status-dot"></div>
+      <span id="status-text">接続中…</span>
+    </div>
+  </header>
+
+  <textarea id="editor" placeholder="ここにテキストを入力すると、他のデバイスに即時反映されます"></textarea>
+
+  <footer>
+    <button id="btn-copy" onclick="copyText()">コピー</button>
+    <button id="btn-clear" onclick="clearText()">クリア</button>
+  </footer>
+
+  <div id="toast">コピーしました</div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // ============================================================
+    // ▼ ここにFirebaseの設定を貼り付けてください
+    // ============================================================
+    const firebaseConfig = {
+      apiKey:            "AIzaSyD0ywD8GWoKmVgl0_pbg5ksXZ1JEFlQuNU",
+      authDomain:        "clipsyncbb.firebaseapp.com",
+      databaseURL:       "https://clipsyncbb-default-rtdb.firebaseio.com",
+      projectId:         "clipsyncbb",
+      storageBucket:     "clipsyncbb.firebasestorage.app",
+      messagingSenderId: "283497646252",
+      appId:             "1:283497646252:web:f09ee26e702e49b8d2b709"
+    };
+    // ============================================================
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getDatabase(app);
+    const clipRef = ref(db, "clipboard/text");
+
+    const editor     = document.getElementById("editor");
+    const dot        = document.getElementById("status-dot");
+    const statusText = document.getElementById("status-text");
+
+    let isRemoteUpdate = false;
+    let saveTimer = null;
+
+    // 接続状態の監視
+    const connRef = ref(db, ".info/connected");
+    const { onValue: _onValue } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
+
+    // リモートの変更を受信
+    onValue(clipRef, (snapshot) => {
+      const val = snapshot.val() ?? "";
+      if (editor.value !== val) {
+        isRemoteUpdate = true;
+        const pos = editor.selectionStart;
+        editor.value = val;
+        editor.selectionStart = editor.selectionEnd = pos;
+        isRemoteUpdate = false;
+      }
+      dot.className = "connected";
+      statusText.textContent = "同期済み";
+    }, (error) => {
+      dot.className = "error";
+      statusText.textContent = "エラー";
+    });
+
+    // 入力したらFirebaseに保存（300ms待ってから送信）
+    editor.addEventListener("input", () => {
+      if (isRemoteUpdate) return;
+      dot.className = "syncing";
+      statusText.textContent = "同期中…";
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        set(clipRef, editor.value);
+      }, 300);
+    });
+
+    // グローバルに公開
+    window.copyText = async () => {
+      try {
+        await navigator.clipboard.writeText(editor.value);
+        showToast("コピーしました");
+      } catch {
+        editor.select();
+        document.execCommand("copy");
+        showToast("コピーしました");
+      }
+    };
+
+    window.clearText = () => {
+      editor.value = "";
+      set(clipRef, "");
+      editor.focus();
+    };
+  </script>
+
+  <script>
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 1800);
+    }
+  </script>
+
+</body>
+</html>
